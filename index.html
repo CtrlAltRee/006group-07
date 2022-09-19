@@ -7,9 +7,69 @@
     <title>Group 7: Task List</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
+    <div class="container">
+        <div>
+            <h1>Task List <i class="fa fa-list" aria-hidden="true"></i></h1>
+        </div>
+    <form>
+        <div>
+            <h2>Add New Task</h2>
+        <div>
+        <div class="row">
+            <div class="col">
+                <label for="date">Due Date</label>
+                <input type="date" class="form-control" id="date" placeholder="Select Due Date" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="taskName">Task Name</label>
+                <input type="text" class="form-control" id="taskName" placeholder="Task Name" required>
+            </div>
+            <div class="col-md-4">
+                <label for="assignTo">Assign To</label>
+                <input type="text" class="form-control" id="assignTo" placeholder="Assign To">
+            </div>
+            <div class="col-md-4">
+                <label for="taskStatus">Status</label>
+                <select class="form-control" id="taskStatus" class="form-control" required>
+                    <option value="">Choose Status</option>
+                    <option value="1">To Do</option>
+                    <option value="2">In Progress</option>
+                    <option value="3">Review</option>
+                    <option value="4">Done</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="description">Task Description</label>
+                <textarea class="form-control" id="description" rows="2"></textarea>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-success btn-lg rounded-circle mt-3"><i class="fa-solid fa-circle-plus"></i></button>
+            </div>
+        </div>
+    </form>
+    </div>
+ 
+ 
+
+
+    
+      
+    
+
+
+
+
+
+
+
     
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
