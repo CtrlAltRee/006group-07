@@ -1,3 +1,26 @@
+const assignTo = 
+    document.querySelector('#assignTo');
+    const assign = assignTo.value;
+    console.log("assign: " + assign);
+
+const taskStatus = 
+    document.querySelector('#taskStatus');
+    const status = taskStatus.value;
+    
+const date = 
+    document.querySelector('#date');
+    const newDate = date.value;
+      
+
+const description = 
+    document.querySelector('#desciption');
+    const newDescription = description.value;
+
+const taskName = 
+    document.querySelector('#taskName');
+    const newTaskName = taskName.value;
+
+
 
 // function validFormFieldInput(data) {
 //     const taskName = 
@@ -28,22 +51,6 @@
     });
   })();
 
-const assignTo = 
-    document.querySelector('#assignTo');
-    const assign = assignTo.value;
-    console.log("assign: " + assign);
 
-const taskStatus = 
-    document.querySelector('#taskStatus');
-    const status = taskStatus.value;
-    
-const date = 
-    document.querySelector('#date');
-    const newDate = date.value;
-      
-
-const description = 
-    document.querySelector('#desciption');
-    const newDescription = description.value;
 
 
