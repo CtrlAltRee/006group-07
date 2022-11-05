@@ -1,26 +1,26 @@
 const assignTo = 
     document.querySelector('#assignTo');
-    const assign = assignTo.value;
-    console.log("assign: " + assign);
+    
 
 const taskStatus = 
     document.querySelector('#taskStatus');
-    const status = taskStatus.value;
+   
     
 const date = 
     document.querySelector('#date');
-    const newDate = date.value;
+    
       
 
 const description = 
     document.querySelector('#desciption');
-    const newDescription = description.value;
+    
 
 const taskName = 
     document.querySelector('#taskName');
-    const newTaskName = taskName.value;
+   
 
-
+    const newForm = document.getElementById('form');
+    const taskManager = new TaskManager();
 
 // function validFormFieldInput(data) {
 //     const taskName = 
@@ -52,5 +52,17 @@ const taskName =
   })();
 
 
+// submit button
+ //newTaskForm.addEventListener('submit', function ) {
+  //  if 
+ //}
+
+
+
+console.log(TaskManager.tasks)
+
+// question on how to console log task 5 step 3
+//let TaskManager = new task;
+//console.log(newTask)
 
 
