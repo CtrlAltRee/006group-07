@@ -19,12 +19,12 @@
         <div class="text-center m-3">
             <h2 class="fw-light">Task List <i class="fa fa-list" aria-hidden="true"></i></h2>
         </div>
-        <form class="needs-validation" novalidate>
+        <form id="form" class="needs-validation" novalidate>
             <div class="row">
                 <div class="col">
                     <label for="date">Due Date</label>
                     <input type="date" class="form-control" id="date" placeholder="Select Due Date" required id="validationCustom01">
-                    <div class="invalid-feedback">Please select a Date</div>
+                    <div class="invalid-feedback">Please select a date</div>
                 </div>
             </div>
             <div class="row">
@@ -57,7 +57,7 @@
                     <div class="invalid-feedback">Please give a description</div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-success btn-lg rounded-circle mt-3 mb-3"><i
+                    <button id="submit-btn" type="submit" class="btn btn-success btn-lg rounded-circle mt-3 mb-3"><i
                             class="fa-solid fa-circle-plus"></i></button>
                 </div>
             </div>
