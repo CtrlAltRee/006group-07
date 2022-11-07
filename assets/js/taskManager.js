@@ -3,7 +3,7 @@ class TaskManager {
         this.tasks = [];
         this.currentId = 0;
     } 
-    addTask(name, description, assignedTo, dueDate, status){
+    addTask(name, description, assignedTo, dueDate, status) {
         const task = {
            id: this.currentId++,
            name: document.getElementById('taskName').value,
