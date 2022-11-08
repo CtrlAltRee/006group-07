@@ -2,6 +2,16 @@
 const newForm = document.getElementById('form');
 const submit = document.getElementById('submit-btn');
 const taskManager = new TaskManager();
+// need to define 
+const name = document.querySelector('#taskName');  
+const assignedTo = document.querySelector('#assignTo');
+const date = document.querySelector('#date');
+const status = document.querySelector('#taskStatus');  
+const description = document.querySelector('#description');
+const taskHtml = createTaskHtml(name, description, assignedTo, date, status);
+
+//ask about console 
+// console.log(taskHtml);
 
 
 /* function validFormFieldInput(data) {
@@ -71,7 +81,8 @@ newForm.addEventListener('submit', (e) => {
   taskAssignTo.value = "";
   taskStatus.value = "";
   dueDate.value = "";
-   }
+  taskManager.render();
+ }
 }) 
 
 /* function clickMe() {
