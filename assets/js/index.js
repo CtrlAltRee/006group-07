@@ -1,9 +1,4 @@
 // declare variables
-const date = document.querySelector('#date');
-const taskName = document.querySelector('#taskName');  
-const assignTo = document.querySelector('#assignTo');
-const taskStatus = document.querySelector('#taskStatus');  
-const description = document.querySelector('#desciption');
 const newForm = document.getElementById('form');
 const submit = document.getElementById('submit-btn');
 const taskManager = new TaskManager();
@@ -23,7 +18,9 @@ const taskManager = new TaskManager();
 
 
 // function for form validation 
-const validFormFieldInput = () => {
+/*
+const validFormFieldInput = 
+(() => {
     'use strict';  
     // fetch all the forms we want to apply custom Bootstrap validation styles to
     const forms = document.querySelectorAll('.needs-validation'); 
@@ -37,23 +34,63 @@ const validFormFieldInput = () => {
         form.classList.add('was-validated');
       }, false);
     });
-  };
+  }; */
 
 // button did not clear form with this function
-/* new task form event listener
-newForm.addEventListener('submit', function(e) {
+// new task form event listener
+newForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  taskManager.addTask(taskName, description, assignTo, date, taskStatus);
-}) */
+  const taskName = document.querySelector('#taskName');  
+  const taskAssignTo = document.querySelector('#assignTo');
+  const dueDate = document.querySelector('#date');
+  const taskStatus = document.querySelector('#taskStatus');  
+  const taskDescription = document.querySelector('#description');
+  // *** ***/
+  if(taskName.value === '') {
+    alert('Please enter a task name')
+   } else if (taskDescription.value === '') {
+    alert('Please enter a task description')
+   } else if(taskAssignTo.value === '') {
+    alert('Please enter a task assigned to')
+   } else if (dueDate.value === '') {
+    alert('Please enter a due date')
+   } else {
+  // **** add values ****
+  const name = taskName.value;
+  const description = taskDescription.value;
+  const assignedTo = taskAssignTo.value;
+  const date = dueDate.value;
+  const status = taskStatus.value;
+  // validFormFieldInput('taskName');
+  // validFormFieldInput('description');
+  // validFormFieldInput('assignTo');
+  taskManager.addTask(name, description, assignedTo, date, status);
+  //taskManager.addTask(taskName, description, assignTo, date, taskStatus);
+  taskName.value = "";
+  taskDescription.value = "";
+  taskAssignTo.value = "";
+  taskStatus.value = "";
+  dueDate.value = "";
+   }
+}) 
 
-function clickMe() {
-  validFormFieldInput('taskName');
-  validFormFieldInput('description');
-  validFormFieldInput('assignTo');
-  taskManager.addTask();
-};
+/* function clickMe() {
+  const taskName = document.querySelector('#taskName');  
+  const taskAssignTo = document.querySelector('#assignTo');
+  const taskStatus = document.querySelector('#taskStatus');  
+  const taskDescription = document.querySelector('#description');
+  // validFormFieldInput('taskName');
+  // validFormFieldInput('description');
+  // validFormFieldInput('assignTo');
+  const name = taskName.value;
+  const description = taskDescription.value;
+  const assignedTo = taskAssignTo.value;
+  const status = taskStatus.value;
+  taskManager.addTask(name, description, assignedTo, dueDate, status);
+  console.log(taskManager.taskName);
+}; */
 
-submit.onclick = clickMe();
+//submit.onclick = clickMe();
 
 // not sure if correct
 // console.log(taskManager.addTask(taskName, description, assignTo, date, taskStatus));

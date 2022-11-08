@@ -6,10 +6,10 @@ class TaskManager {
     addTask(name, description, assignedTo, dueDate, status) {
         const task = {
            id: this.currentId++,
-           name: document.getElementById('taskName').value,
-           description: document.getElementById('description').value,
-           assignedTo: document.getElementById('assignTo').value,
-           dueDate: document.getElementById('date').value,
+           name: name,
+           description: description,
+           assignedTo: assignedTo,
+           dueDate: dueDate,
            status: 'TODO'
     };
     this.tasks.push(task)
