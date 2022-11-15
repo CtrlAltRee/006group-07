@@ -17,7 +17,7 @@ const createTaskHtml = (id, name, description, assignedTo, date, status) => {
          <br>
          <div class="d-flex justify-content-end mb-3 mx-1">
          <a href="#" class="done-button card-link btn btn-success">Complete</a>
-         <a href="#" class="card-link btn btn-danger">Delete</a>
+         <a href="#" class="delete-button card-link btn btn-danger">Delete</a>
          </div>
        </div>
      </div>
@@ -84,5 +84,15 @@ load() {
     this.tasks = JSON.parse(tasksJson);
     const currentId = localStorage.getItem('currentId');
     this.currentId = Number(currentId);
+}
+deleteTask(taskId) {
+    const newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+        const task = this.tasks[i];
+        if (task.id != taskId) {
+            newTasks.push(task)
+        }
+    } 
+    this.tasks = newTasks;
 }
 }
