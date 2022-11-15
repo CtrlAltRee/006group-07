@@ -1,7 +1,6 @@
 // declare variables
-const newForm = document.getElementById('form');
-const submit = document.getElementById('submit-btn');
-const taskManager = new TaskManager();
+
+
 // need to define 
 const name = document.querySelector('#taskName');  
 const assignedTo = document.querySelector('#assignTo');
@@ -9,7 +8,11 @@ const date = document.querySelector('#date');
 const status = document.querySelector('#taskStatus');  
 const description = document.querySelector('#description');
 const taskHtml = createTaskHtml(name, description, assignedTo, date, status);
-
+const newForm = document.getElementById('form');
+const submit = document.getElementById('submit-btn');
+const taskManager = new TaskManager();
+taskManager.load();
+taskManager.render();
 //ask about console 
 // console.log(taskHtml);
 
@@ -124,7 +127,7 @@ taskList.addEventListener('click', (event) => {
         const taskId = Number(parentTask.dataset.taskId);
         const task = taskManager.getTaskById(taskId);
         task.status = 'DONE';
-       // taskManager.save();
+        taskManager.save();
         taskManager.render();
     }
 });
