@@ -72,5 +72,17 @@ getTaskById(taskId) {
     }
 } 
     return foundTask;
-};
+}
+save() {
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem('tasks', tasksJson);
+    const currentId = JSON.stringify(this.currentId);
+    localStorage.setItem('currentId', currentId);
+}
+load() {
+    const tasksJson = localStorage.getItem('tasks');
+    this.tasks = JSON.parse(tasksJson);
+    const currentId = localStorage.getItem('currentId');
+    this.currentId = Number(currentId);
+}
 }
