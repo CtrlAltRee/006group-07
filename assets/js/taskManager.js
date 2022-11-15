@@ -1,8 +1,8 @@
 
-const createTaskHtml = (name, description, assignedTo, date, status) => {
+const createTaskHtml = (id, name, description, assignedTo, date, status) => {
 
     const html = `   
-    <li class="list-group-item">
+    <li class="list-group-item" data-task-id=${id}>
     <div class="card bg-light" style="width: 18rem">
        <div class="card-body">
          <div class="row">
@@ -16,7 +16,7 @@ const createTaskHtml = (name, description, assignedTo, date, status) => {
          </div>
          <br>
          <div class="d-flex justify-content-end mb-3 mx-1">
-         <a href="#" class="card-link btn btn-success">Complete</a>
+         <a href="#" class="done-button card-link btn btn-success">Complete</a>
          <a href="#" class="card-link btn btn-danger">Delete</a>
          </div>
        </div>
@@ -63,4 +63,14 @@ render() {
     taskList.innerHTML = tasksHtml;
 
 }
+getTaskById(taskId) {
+    let foundTask = taskId; 
+    for (let i = 0; i < this.tasks.length; i++) {
+    let task = this.tasks[i];
+    if (task.id === taskId) {
+        foundTask = task;
+    }
+} 
+    return foundTask;
+};
 }

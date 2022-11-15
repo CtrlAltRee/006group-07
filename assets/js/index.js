@@ -117,3 +117,17 @@ For now, if your New Task form is on a seperate page to your Task List, copy it 
 //console.log(newTask)
 
 
+const taskList = document.querySelector('#taskList');
+taskList.addEventListener('click', (event) => {
+    if (event.target.classList.contains('done-button') === true) {
+        const parentTask = event.target.parentElement.parentElement.parentElement;
+        const taskId = Number(parentTask.dataset.taskId);
+        const task = taskManager.getTaskById(taskId);
+        task.status = 'DONE';
+       // taskManager.save();
+        taskManager.render();
+    }
+});
+
+
+
