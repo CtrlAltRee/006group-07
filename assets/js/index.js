@@ -1,7 +1,8 @@
 // declare variables
+const taskManager = new TaskManager(0);
+taskManager.load();
+taskManager.render();
 
-
-// need to define 
 const name = document.querySelector('#taskName');  
 const assignedTo = document.querySelector('#assignTo');
 const date = document.querySelector('#date');
@@ -10,11 +11,6 @@ const description = document.querySelector('#description');
 const taskHtml = createTaskHtml(name, description, assignedTo, date, status);
 const newForm = document.getElementById('form');
 const submit = document.getElementById('submit-btn');
-const taskManager = new TaskManager();
-taskManager.load();
-taskManager.render();
-//ask about console 
-// console.log(taskHtml);
 
 
 /* function validFormFieldInput(data) {
@@ -49,8 +45,8 @@ const validFormFieldInput =
     });
   }; */
 
-// button did not clear form with this function
-// new task form event listener
+
+// submit event listener for form validation and to add task
 newForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const taskName = document.querySelector('#taskName');  
@@ -58,17 +54,19 @@ newForm.addEventListener('submit', (e) => {
   const dueDate = document.querySelector('#date');
   const taskStatus = document.querySelector('#taskStatus');  
   const taskDescription = document.querySelector('#description');
-  // *** ***/
-  if(taskName.value === '') {
+  // *** form alerts ***/
+  if(dueDate.value === '') {
+    alert('Please choose a due date')
+   } else if (taskName.value === '') {
     alert('Please enter a task name')
-   } else if (taskDescription.value === '') {
-    alert('Please enter a task description')
    } else if(taskAssignTo.value === '') {
-    alert('Please enter a task assigned to')
-   } else if (dueDate.value === '') {
-    alert('Please enter a due date')
+    alert('Please assign the task')
+   } else if (taskStatus.value === '') {
+    alert('Please choose a status')
+   } else if (taskDescription.value === '') {
+    alert('Please add a description')
    } else {
-  // **** add values ****
+  // *** add values *** //
   const name = taskName.value;
   const description = taskDescription.value;
   const assignedTo = taskAssignTo.value;
@@ -106,18 +104,8 @@ newForm.addEventListener('submit', (e) => {
 
 //submit.onclick = clickMe();
 
-// not sure if correct
-// console.log(taskManager.addTask(taskName, description, assignTo, date, taskStatus));
 
 console.log(taskManager);
-
-//Questons:
-// question: how to console log task 5 step 3
-/* question meaning: 
-For now, if your New Task form is on a seperate page to your Task List, copy it over to your Task List so it's all on the one page. */
-
-//let TaskManager = new task;
-//console.log(newTask)
 
 
 const taskList = document.querySelector('#taskList');

@@ -17,7 +17,7 @@ const createTaskHtml = (id, name, description, assignedTo, date, status) => {
          <br>
          <div class="d-flex justify-content-end mb-3 mx-1">
          <a href="#" class="done-button card-link btn btn-success">Complete</a>
-         <a href="#" class="card-link btn btn-danger">Delete</a>
+         <a href="#" class="delete-button card-link btn btn-danger">Delete</a>
          </div>
        </div>
      </div>
@@ -27,9 +27,9 @@ return html
 }
 
 class TaskManager {
-    constructor(currentId) {
+    constructor(currentId = 0) {
         this.tasks = [];
-        this.currentId = 0;
+        this.currentId = currentId;
     } 
     addTask(name, description, assignedTo, dueDate, status) {
         const task = {
@@ -46,7 +46,7 @@ render() {
     let tasksHtmlList = [];
     for (let i = 0; i < this.tasks.length; i++) {
         let currentTask = this.tasks[i];
-        const currentDate = new Date(this.tasks[i].dueDate);
+        const currentDate = new Date(currentTask.dueDate);
         let formattedDate = currentDate.toDateString();
         let taskHtml = createTaskHtml(
             this.tasks[i].id,
@@ -59,7 +59,7 @@ render() {
         tasksHtmlList.push(taskHtml);
     }
     const tasksHtml = tasksHtmlList.join('\n');
-    const taskList = document.getElementById('taskList'); // add id to ul //
+    const taskList = document.getElementById('taskList'); 
     taskList.innerHTML = tasksHtml;
 
 }
