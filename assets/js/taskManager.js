@@ -2,8 +2,8 @@
 const createTaskHtml = (id, name, description, assignedTo, date, status) => {
 
     const html = `   
-    <li class="list-group-item" data-task-id=${id}>
-    <div class="card bg-light" style="width: 18rem">
+    <li class="list-group-item mt-3 mb-1" data-task-id=${id}>
+    <div class="card bg-light border-secondary border-opacity-50" style="width: 25rem">
        <div class="card-body">
          <div class="row">
          <h5 class="col-sm-8 card-title">${name}</h5>
